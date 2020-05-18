@@ -1,16 +1,12 @@
-# authentication-ui
-authentication UI made using react-redux-router-hooks-starter-kit
+# authentication-backend
+authentication backend made using Node.js, Express.js and MongoDB
 
 ## Contains:
 
 * environment specific file - single place to configure app
-* webpack is used for bundling the app
-* react-router configuration with private routing
-* Redux setup with thunk middleware
-* Code splitting using @loadable/component
 * Environment specific API Call using Axios
 * Environment configuration in package scripts
-* separate containers and components
+* separate containers
 
 ## Getting Started
 
@@ -18,20 +14,20 @@ authentication UI made using react-redux-router-hooks-starter-kit
 
 ```bash
 git clone https://github.com/gurpreetbirdi/authentication-component.git
-cd authentication-component/authentication-ui
+cd authentication-component/authentication-backend
 ```
 
 **2. Install all dependencies:**
 
 ```npm install``` or ```yarn install```
 
-**3. Change Specific environment variable file:(Reference file- .env.example)**
+**3. Change Specific environment variable file:**
 
-```.env.{variable}``` ```dev||qa||stg||prod```
+```{variable}.env``` ```dev||qa||stg||prod```
 
 **4. Run the app:**
 
-```npm start``` or ```yarn start```
+```npm run dev``` or ```yarn run dev```
 
 Run server on port 3000 with HMR enabled or you can change port in webpack.config.js
 
