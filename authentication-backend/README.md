@@ -21,7 +21,7 @@ cd authentication-component/authentication-backend
 
 ```npm install``` or ```yarn install```
 
-**3. Change Specific environment variable file:**
+**3. Create new environment variable file:(Reference file- config/example.env)**
 
 ```{variable}.env``` ```dev||qa||stg||prod```
 
@@ -29,12 +29,11 @@ cd authentication-component/authentication-backend
 
 ```npm run dev``` or ```yarn run dev```
 
-Run server on port 3000 with HMR enabled or you can change port in webpack.config.js
+Run backend server on port 3000 with HMR enabled
 
 **5. Build files for deployment:**
 
 ```npm run build:{variable}``` or ```yarn build:{variable}``` ```dev||qa||stg||prod```
 
-Building app in the "build" directory. Contains the index.html with the minified assets, it's ready for production!.
 
                                                     **Happy Coding**

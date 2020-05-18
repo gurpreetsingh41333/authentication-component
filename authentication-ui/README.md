@@ -25,7 +25,7 @@ cd authentication-component/authentication-ui
 
 ```npm install``` or ```yarn install```
 
-**3. Change Specific environment variable file:(Reference file- .env.example)**
+**3. Create new environment variable file:(Reference file- .env.example)**
 
 ```.env.{variable}``` ```dev||qa||stg||prod```
 
@@ -33,7 +33,7 @@ cd authentication-component/authentication-ui
 
 ```npm start``` or ```yarn start```
 
-Run server on port 3000 with HMR enabled or you can change port in webpack.config.js
+Run webapp on port 3001 with HMR enabled or you can change port in webpack.config.js
 
 **5. Build files for deployment:**
 
