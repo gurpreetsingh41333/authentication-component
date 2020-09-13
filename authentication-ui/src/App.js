@@ -8,8 +8,9 @@ import {
 import loadable from '@loadable/component';
 
 import NoMatch from './components/NoMatch';
-import { routes } from './config/constants';
-import SignIn from './components/SignIn/SignIn';
+import { routes, constants } from './config/constants';
+import SignIn from './components/Authentication/SignIn';
+import SignUp from './components/Authentication/SignUp';
 
 const Main = loadable(() => import(/* webpackChunkName: "Main" */
   './containers/Main'), {
@@ -19,12 +20,12 @@ const Main = loadable(() => import(/* webpackChunkName: "Main" */
 // A wrapper for <Route> that redirects to the SIGNIN
 // screen if you're not yet authenticated.
 const PrivateRoute = ({ children, ...rest }) => {
-  let isAuthenticated = localStorage.getItem('isAuthenticated');
+  let authToken = localStorage.getItem(constants.AUTH_TOKEN);
   return (
     <Route
       {...rest}
       render={({ location }) =>
-        isAuthenticated === "true" ? (
+        authToken ? (
           children
         ) : (
             <Redirect
@@ -46,8 +47,11 @@ export default function App() {
         <PrivateRoute exact path={routes.MAIN}>
           <Main />
         </PrivateRoute>
-        <Route path="/signin">
+        <Route path={routes.SIGNIN}>
           <SignIn />
+        </Route>
+        <Route path={routes.SIGNUP}>
+          <SignUp />
         </Route>
         <Route path={routes.NO_MATCH}>
           <NoMatch />

@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 import { routes } from '../config/constants';
-import { history } from '../containers/Store';
+import { history } from './Store';
 
 function setHeaderOptions(config) {
   let headers = {
     'Content-Type': 'application/json'
   };
-  if (config.header && config.header.Authorization) {
+  if (config?.header?.Authorization) {
     let Token = '';
     headers = Object.assign({}, headers, {
       Authorization: 'Bearer ' + Token
@@ -18,8 +18,8 @@ function setHeaderOptions(config) {
 
 const showErrorPage = (error) => {
   /* TODO check for 5XX or 4XX here*/
-  history.push(routes.APPLICATION_ERROR);
-  window.location.reload();
+  // history.push(routes.APPLICATION_ERROR);
+  // window.location.reload();
 }
 
 const ApiCall = {
@@ -33,7 +33,7 @@ const ApiCall = {
       return response;
     } catch (error) {
       // console.info('error', error.response);
-      if (error && error.response) {
+      if (error?.response) {
         showErrorPage(error.response);
         return error.response;
       } else {
@@ -47,15 +47,15 @@ const ApiCall = {
       let response = await axios.post(config.url, config.body, {
         headers: headers,
       })
-      // console.info('response', response);
+      console.info('response', response);
       return response;
     } catch (error) {
-      // console.info('error', error.response);
-      if (error && error.response) {
+      console.info('error', error.response);
+      if (error?.response) {
         showErrorPage(error.response);
         return error.response;
       } else {
-        return Promise.reject({ ...error });
+        // return Promise.reject({ ...error });
       }
     }
   },
@@ -69,7 +69,7 @@ const ApiCall = {
       return response;
     } catch (error) {
       // console.info('error', error.response);
-      if (error && error.response) {
+      if (error?.response) {
         showErrorPage(error.response);
         return error.response;
       } else {
@@ -87,7 +87,7 @@ const ApiCall = {
       return response;
     } catch (error) {
       // console.info('error', error.response);
-      if (error && error.response) {
+      if (error?.response) {
         showErrorPage(error.response);
         return error.response;
       } else {
@@ -116,7 +116,7 @@ const ApiCall = {
       return response;
     } catch (error) {
       // console.info('error', error.response);
-      if (error && error.response) {
+      if (error?.response) {
         showErrorPage(error.response);
         return error.response;
       } else {

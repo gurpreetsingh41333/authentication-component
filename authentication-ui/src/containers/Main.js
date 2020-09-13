@@ -1,4 +1,5 @@
 import React from 'react';
+import AppDrawer from '../components/AppDrawer';
 
 class Main extends React.Component {
   constructor(props) {
@@ -30,9 +31,7 @@ class Main extends React.Component {
       // render any custom fallback UI
       return <span>Error</span>;
     }
-    return <div>
-      <span>Private component</span>
-    </div>;
+    return <AppDrawer />;
   }
 }
 
